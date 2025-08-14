@@ -18,7 +18,7 @@ export class Projets implements OnInit {
 
   ngOnInit(): void {
     const contributeurId = 2;  
-    const apiUrl = `http://localhost:8080/api/projets/recupere/${contributeurId}`;
+    const apiUrl = `http://localhost:8080/api/projets/recupère/id_contributeur/${contributeurId}`;
     this.http.get<any[]>(apiUrl).subscribe({
       next: (res) => {
         this.projets = res;
@@ -33,7 +33,7 @@ export class Projets implements OnInit {
   }
 
 
-  deleteProject(idProjet: number, idAdmin: number) {
+deleteProject(idProjet: number, idAdmin: number) {
   if (confirm('Voulez-vous vraiment supprimer ce projet ?')) {
     this.http.delete(`http://localhost:8080/api/projets/supprime/${idAdmin}?id=${idProjet}`, { responseType: 'text' })
       .subscribe({
@@ -48,6 +48,9 @@ export class Projets implements OnInit {
       });
   }
 }
+
+
+
 
 
 getAllProjets() {
