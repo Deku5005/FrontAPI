@@ -1,34 +1,59 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router, RouterOutlet } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FontAwesomeModule,FaConfig} from '@fortawesome/angular-fontawesome';
-import { SearchBar } from '../dasboard-contributeur-section/search-bar/search-bar';
-import { faArrowRight, faEye,faHome , faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faBell, faCircle, faEye } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-
-
 
 @Component({
   selector: 'app-notifications',
-  imports: [ FormsModule, CommonModule,RouterOutlet,FontAwesomeModule,SearchBar],
+  standalone: true,
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './notifications.html',
   styleUrls: ['./notifications.css']
 })
-export class NotificationsComponent  {
+export class NotificationsComponent {
 
-     faArrowRight = faArrowRight;
-     faEye = faEye;
-     faHome = faHome;
-     faArrowLeft = faArrowLeft;
+  isOpen = true;
+  // Icônes
+  faTimes = faTimes;
+  faEye = faEye;
+  faBell = faBell;
+  faCircle = faCircle;
 
-     constructor(private location :Location){}
+  // Notifications de démo
+  notifications = [
+    {
+      id: 1,
+      title: 'Nouveau message',
+      content: 'Vous avez reçu un message de Ibrahim Bah',
+      time: '2 min',
+      unread: true,
+      type: 'message'
+    },
+    {
+      id: 2,
+      title: 'Projet mis à jour',
+      content: 'Le projet "Dashboard" a été modifié',
+      time: '15 min',
+      unread: false,
+      type: 'project'
+    },
 
-     goBack(): void{
-      this.location.back();
-      alert("Retour bien recu")
-     }
+  ];
+
+  constructor(private router: Router, private location: Location) {}
+
+   goBack(): void {
+    this.location.back();
+   }
+
+  markAsRead(id: number): void {
+    const notif = this.notifications.find(n => n.id === id);
+    if (notif) notif.unread = false;
   }
 
-
+  getUnreadCount(): number {
+    return this.notifications.filter(n => n.unread).length;
+  }
+}

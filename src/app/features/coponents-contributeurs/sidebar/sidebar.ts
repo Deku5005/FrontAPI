@@ -5,6 +5,7 @@ import { faCodeBranch, faCog, faGear, faHome, faLayerGroup, faLightbulb, faList,
 
 @Component({
   selector: 'app-sidebar',
+  standalone: true,
   imports: [FontAwesomeModule, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'

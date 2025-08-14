@@ -6,9 +6,9 @@
     </button>
   </div>
   <div class="header-right">
-    <button class="notif-btn" aria-label="Notifications" #icon>
-      <a routerLink="/Notification"><fa-icon [icon]="faBell"></fa-icon></a>
-      <span class="notif-badge">3</span>
+    <button class="notif-btn" aria-label="Notifications" (click)="navigateToNotifications()">
+      <fa-icon [icon]="faBell"></fa-icon>
+      <span class="notif-badge">2</span>
     </button>
 
     <button class="darkmode-btn" aria-label="Mode sombre" #btn>

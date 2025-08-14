@@ -20,6 +20,7 @@ import { MesContributionsContributeurs } from './features/coponents-contributeur
 import {
   MesProjetContributeurs
 } from './features/coponents-contributeurs/mes-projet-contributeurs/mes-projet-contributeurs';
+import { NotificationsComponent } from './features/coponents-contributeurs/notifications/notifications';
 import {ConnexionComponent} from './features/login/connexion-component/connexion-component';
 import {InscriptionComponent} from './features/login/inscription-component/inscription-component';
 import { ContributionDetailsComponent } from './features/coponents-contributeurs/contribution-details/contribution-details';
@@ -41,6 +42,9 @@ export const routes: Routes = [
     path: "ideeProjet",
     component: IdeeDeProjet
   },
+
+  {path: 'notifications',
+    component: NotificationsComponent},
 
   {
     path: "Domaines",
@@ -115,8 +119,10 @@ export const routes: Routes = [
       { path: '', component: MesContributionsContributeurs }
     ]
   },
+  
   { path: 'mes-contributions-contributeurs', component: MesContributionsContributeurs },
   { path: 'contribution', component: MesContributionsContributeurs },
+
   {
     path: "Recompenses",
     component: DashboardContributeur,

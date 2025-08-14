@@ -1,0 +1,14 @@
+/* Thème clair par défaut */
+body {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Thème sombre */
+body.dark-theme {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+}

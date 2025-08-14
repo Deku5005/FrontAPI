@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faBell, faMoon, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,6 +16,12 @@ export class Header {
   protected readonly faBell = faBell;
   protected readonly faMoon = faMoon;
 
+
+constructor(private router: Router) {}
+
+   navigateToNotifications(): void {
+    this.router.navigate(['/notifications']);
+  }
 
   private estActiver = false;
 

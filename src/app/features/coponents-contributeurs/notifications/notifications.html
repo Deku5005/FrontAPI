@@ -1,51 +1,28 @@
-
-<div id="container">
-  <div id="haut">
-     <app-search-bar/>
-
-  </div>
-
-
-
-  <div id="milieu">
-    <div id="premier">
-      <h2>Collabdev</h2>
-      <div id="second">
-        <p>Notification: Proposition d'idées</p>
-        <button id="voir"> <fa-icon [icon]="faEye"></fa-icon> Voir</button>
-      </div>
+<div class="notifications-overlay" *ngIf="isOpen">
+  <div class="notifications-sidepanel">
+    <div class="notifications-header">
+      <h2>Notifications <span *ngIf="getUnreadCount() > 0" class="badge">{{ getUnreadCount() }}</span></h2>
+      <button class="close-button" (click)="goBack()">
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </button>
     </div>
 
-    <div id="premier">
-      <h2>Collabdev</h2>
-      <div id="second">
-        <p>Notification: Proposition d'idées</p>
-        <button id="voir"> <fa-icon [icon]="faEye"></fa-icon> Voir</button>
-      </div>
-    </div>
-
-    <div id="premier">
-      <h2>Collabdev</h2>
-      <div id="second">
-        <p>Notification: Proposition d'idées</p>
-        <button id="voir"> <fa-icon [icon]="faEye"></fa-icon> Voir</button>
-      </div>
-    </div>
-
-    <div id="premier">
-      <h2>Collabdev</h2>
-      <div id="second">
-        <p>Notification: Proposition d'idées</p>
-        <button id="voir"> <fa-icon [icon]="faEye"></fa-icon> Voir</button>
+    <div class="notifications-list">
+      <div *ngFor="let notification of notifications"
+           class="notification-item"
+           [class.unread]="notification.unread"
+           (click)="markAsRead(notification.id)">
+        <div class="notification-header">
+          <h3 class="notification-title">{{ notification.title }}</h3>
+          <span class="notification-time">{{ notification.time }}</span>
+        </div>
+        <p class="notification-content">{{ notification.content }}</p>
+        <div class="notification-actions">
+          <button class="action-button">
+            <fa-icon [icon]="faEye"></fa-icon> Voir
+          </button>
+        </div>
       </div>
     </div>
   </div>
-
-
 </div>
-
-
-
-
-
-
