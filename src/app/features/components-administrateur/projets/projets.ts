@@ -8,7 +8,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet, DatePipe, CommonModule, HttpClientModule],
   templateUrl: './projets.html',
-  styleUrls: ['./projets.css'] 
+  styleUrls: ['./projets.css']
 })
 export class Projets implements OnInit {
 
@@ -17,8 +17,8 @@ export class Projets implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    const contributeurId = 2;  
-    const apiUrl = `http://localhost:8080/api/projets/recupère/id_contributeur/${contributeurId}`;
+    const contributeurId = 2;
+    const apiUrl = `http://localhost:8080/api/projets/recupere/${contributeurId}`;
     this.http.get<any[]>(apiUrl).subscribe({
       next: (res) => {
         this.projets = res;
