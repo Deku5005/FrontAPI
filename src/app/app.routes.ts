@@ -15,7 +15,6 @@ import { DasboardContributeurSection } from './features/coponents-contributeurs/
 import { ListProjects } from './features/coponents-contributeurs/list-projects/list-projects';
 import { Reconpenses } from './features/coponents-contributeurs/reconpenses/reconpenses';
 import { PopupEye } from './features/coponents-contributeurs/list-projects/popup-eye/popup-eye';
-import { MesContributionsContributeurs } from './features/coponents-contributeurs/mes-contributions-contributeurs/mes-contributions-contributeurs';
 
 import {
   MesProjetContributeurs
@@ -25,6 +24,12 @@ import {InscriptionComponent} from './features/login/inscription-component/inscr
 import { ContributionDetailsComponent } from './features/coponents-contributeurs/contribution-details/contribution-details';
 import { IdeeDeProjetContributeursComponent } from './features/coponents-contributeurs/idee-de-projet-contributeurs/idee-de-projet-contributeurs';
 import {PageAccueil} from './features/page-accueil/page-accueil';
+import { DashboardGestionnaire } from './features/coponents-contributeurs/dashboard-gestionnaire/dashboard-gestionnaire';
+import { EnsembleContributionsContributeurs } from './features/coponents-contributeurs/ensemble-contributions-contributeurs/ensemble-contributions-contributeurs';
+import { DemandeGestionnaireAdministrateur } from './features/components-administrateur/demande-gestionnaire-administrateur/demande-gestionnaire-administrateur';
+import { ProjetRecents } from './features/coponents-contributeurs/projet-recents/projet-recents';
+import { MesContributionsContributeurs } from './features/coponents-contributeurs/mes-contributions-contributeurs/mes-contributions-contributeurs';
+
 
 export const routes: Routes = [
   // Redirection par défaut vers Connexion
@@ -88,6 +93,17 @@ export const routes: Routes = [
     ]
   },
   {
+    path: "NewContribution",
+    component: DashboardContributeur,
+    children: [
+      { path: "", component: NewContribution }
+    ]
+  },
+  {
+  path: "MescontributionsContributeurs",
+  component: MesContributionsContributeurs
+},
+  {
     path: "TableauContributeur",
     component: DashboardContributeur,
     children: [
@@ -109,14 +125,37 @@ export const routes: Routes = [
     ]
   },
   {
-    path: "MesContributionsContributeurs",
+    path: "dashboardGestionnaire",
     component: DashboardContributeur,
-    children:[
-      { path: '', component: MesContributionsContributeurs }
+    children: [
+      { path: "", component: DashboardGestionnaire }
     ]
   },
-  { path: 'mes-contributions-contributeurs', component: MesContributionsContributeurs },
-  { path: 'contribution', component: MesContributionsContributeurs },
+   {
+    path: "Deconnexion",
+    component: ConnexionComponent
+  },
+  {
+    path: "Ensemble",
+    component: DashboardContributeur,
+    children:[
+      { path: '', component: EnsembleContributionsContributeurs }
+    ]
+  },
+  {
+    path: "ProjetsRejoints",
+    component: DashboardContributeur,
+    children: [
+      { path: '', component: ProjetRecents }
+    ]
+  },
+  {
+    path: "Demandes-Gestionnaires",
+    component: DasboardAdmin,
+    children:[
+      { path: '', component: DemandeGestionnaireAdministrateur }
+    ]
+  },
   {
     path: "Recompenses",
     component: DashboardContributeur,
