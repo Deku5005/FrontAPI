@@ -1,11 +1,11 @@
 <app-sidebar />
 <app-header />
 <div class="container">
-  <h1>Idee de Projets</h1>
-  <table  class="data-table" *ngIf="idees.length > 0; else noProjects">
+  <h1>Idées de Projets</h1>
+  <table class="data-table" *ngIf="idees.length > 0; else noProjects">
     <thead>
     <tr>
-      <th>ID</th>
+      <th>N°</th>
       <th>Titre</th>
       <th>Description</th>
       <th>Niveau</th>
@@ -27,7 +27,7 @@
     </tbody>
   </table>
 
-    <ng-template #noProjects>
-    <p>Aucun idée trouvée.</p>
+  <ng-template #noProjects>
+    <p>Aucune idée trouvée.</p>
   </ng-template>
 </div>

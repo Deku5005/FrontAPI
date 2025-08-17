@@ -3,7 +3,6 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../../../services/auth-service';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Contributeur } from '../../../models/Contributeur';
 
 @Component({
@@ -11,10 +10,9 @@ import { Contributeur } from '../../../models/Contributeur';
   standalone: true,
   imports: [
     RouterLink,
-    RouterOutlet,
     FormsModule,
-    HttpClientModule,
-  ],
+    HttpClientModule
+],
   templateUrl: './connexion-component.html',
   styleUrls: ['./connexion-component.css'] 
 })
