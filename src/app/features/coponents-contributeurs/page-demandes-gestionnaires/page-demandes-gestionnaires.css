@@ -119,16 +119,21 @@ header {
   padding: 8px 15px;
   border-radius: 50px;
   border: none;
-  color: #fff;
+  
+  background-color: #48bb78;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-.btn-valider {
-  background-color: #48bb78;
+.btn-action:hover {
+  color: white;
+  background-color: #38a169;
 }
 
-.btn-refuser {
+
+.btn-refuser  {
   background-color: #f56565;
+}
+.btn-refuser:hover {
+  background-color: red;
 }
