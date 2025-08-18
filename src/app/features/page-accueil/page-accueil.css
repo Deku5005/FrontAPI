@@ -35,11 +35,10 @@ body {
 }
 
 .logo {
-    margin-bottom: 40px;
-    position: relative;
-    left: 3%;
-    width: 76%;
-    top: 3%;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  position: relative;
+  left: 10%;
 }
 
 .triangle ul {
