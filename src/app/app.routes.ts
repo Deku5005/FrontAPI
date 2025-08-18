@@ -119,7 +119,7 @@ export const routes: Routes = [
       { path: '', component: MesContributionsContributeurs }
     ]
   },
-  
+
   { path: 'mes-contributions-contributeurs', component: MesContributionsContributeurs },
   { path: 'contribution', component: MesContributionsContributeurs },
 

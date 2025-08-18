@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FileUploadService } from './file-upload.service';
@@ -34,6 +34,9 @@ interface Contribution {
   styleUrl: './new-contribution.css'
 })
 export class NewContribution {
+
+  @Input() fonctionnaliteId: string = '';
+  @Input() projetId: string = '';
   // Propriétés pour le suivi du téléversement
   uploadProgress: number | null = null;
   isUploading = false;

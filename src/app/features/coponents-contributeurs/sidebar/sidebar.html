@@ -7,8 +7,8 @@
   <div class="profile">
     <!-- <fa-icon [icon]="faUserCircle" class="avatar"></fa-icon> -->
      <img src="/assets/userFig.jpg" alt="" class="avatar">
-    
-    <div class="role">Développeur Fullstack</div>
+
+    <div class="role">{{nom}} {{prenom}}</div>
     <div class="xp-bar">
       <div class="xp-fill"></div>
     </div>
@@ -21,7 +21,7 @@
            routerLinkActive="active" 
            [routerLinkActiveOptions]="{ exact: true }" 
            class="nav-link" data-section="dashboard">
-          <fa-icon [icon]="faHome"></fa-icon> Tableau de bord Contributeurs
+          <fa-icon [icon]="faHome"></fa-icon> Tableau de bord
         </a>
       </li>
       <li>
@@ -39,9 +39,9 @@
         </a>
       </li>
       <li>
-        <a routerLink="/MesContributionsContributeurs" 
+        <a routerLink="/Ensemble" 
            routerLinkActive="active" 
-           class="nav-link" data-section="MesContributionsContributeurs">
+           class="nav-link" data-section="EnsembleContributionsContributeurs">
           <fa-icon [icon]="githubIcon" flip="horizontal"></fa-icon> Contributions
         </a>
       </li>
